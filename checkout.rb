@@ -56,12 +56,6 @@ entered_items = []
   entered_items << gets.chomp()
 end
 puts "Entered item: #{entered_items.join(', ')}"
-# puts "Enter item quantity for the Product"
-# data = {}
-# Product::PRODUCTS.each do |pro, v|
-#   puts "Please Select Qauntity for #{v} :"
-#   data["#{pro}"] = gets.chomp().to_i
-# end
 invoice = Invoice.new(entered_items.reject(&:empty?))
 price = invoice.discounted_price
 invoice.print_invoice(price)
